@@ -15,3 +15,19 @@ Partiendo del ejercicio Loc@s por las bicis cambiaremos la forma de mostrar los 
 - El valor seleccionado de bicis, debe ser una de las opciones presentadas
 
 **NOTA: ** Recomendamos que el mensaje se añada con un span ya que los estilos ya están definidos.
+
+##RESOLUCION
+
+1. Para la creación del caso utilizamos la creacion de nuevos elementos:
+
+```javascript
+if(nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)){
+        var span = document.createElement("span");
+        var referencia= document.getElementById("name");
+        var padre=referencia.parentNode;
+        padre.insertBefore(span,referencia);
+        var texto = document.createTextNode("Debe ingresar su nombre");
+        span.appendChild(texto);
+        return span;
+} 
+```
