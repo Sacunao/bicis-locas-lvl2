@@ -3,7 +3,8 @@ function validateForm(){
 	var email = document.getElementById("input-email").value;
 	var contrasena = document.getElementById("input-password").value;
 	var nombre = document.getElementById("name").value;
-	var lista = document.getElementsByClassName("form-control").value;
+	var withoutOpcion = document.querySelector("select").value;
+    
 
     if(nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)){
         var span = document.createElement("span");
@@ -72,4 +73,16 @@ function validateForm(){
         span.appendChild(texto);
         return span;
     } 
+    
+    if((withoutOpcion == 0)){
+            var span = document.createElement("span");
+            var referencia = document.querySelector("select");
+            var padre=referencia.parentNode;
+            padre.insertBefore(span,referencia);
+            var texto = document.createTextNode("Elige tu tipo de bici.");
+            span.appendChild(texto);
+            return span;
+        }
+    
+    
 }
