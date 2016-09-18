@@ -16,18 +16,35 @@ Partiendo del ejercicio Loc@s por las bicis cambiaremos la forma de mostrar los 
 
 **NOTA: ** Recomendamos que el mensaje se añada con un span ya que los estilos ya están definidos.
 
-##RESOLUCION
+#RESOLUCION
 
-1. Para la creación del caso utilizamos la creacion de nuevos elementos:
+###
+Para la solución del caso utilizamos la creacion de nuevos elementos:
+1. Se debe crear primero el nodo elemento span.
+2. se debe crear después el nodo elemento texto.
+3. Se debe usar el before para tener las referencias correctas, porque si usuramos el apend lo insertaría automáticamente al último.
 
+La estructura sería:
+
+Para la creación del nodo elemento *span*:
 ```javascript
 if(nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)){
         var span = document.createElement("span");
         var referencia= document.getElementById("name");
         var padre=referencia.parentNode;
         padre.insertBefore(span,referencia);
+} 
+```
+
+Para creación de nodo elemento texto:
+```javascript
+if(nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)){
         var texto = document.createTextNode("Debe ingresar su nombre");
         span.appendChild(texto);
         return span;
 } 
 ```
+
+Imagen ejemplo de como debe aparecer el span: 
+
+![Imagen Final](http://2.1m.yt/d5K8-Es.png "Imagen")
